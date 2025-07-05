@@ -29,18 +29,5 @@ This project is a simple shopping cart system implemented in Kotlin and Java. It
 4. Run the `Main.kt` file to execute the application.
 
 ## Example Usage
-Product Name:
- Shippable Product 101,
-Product Weight:
- 105.0
-
-**Shipment notice**<br>
-**Total package weight 105.0kg**
-
-** Checkout receipt **
-----------------------
-**Subtotal 173**<br>
-**Shipping 10**<br>
-**Amount 183**<br>
-**Balance after checkout: 99817**<br>
+![img.png](img.png)
 ----------------------
