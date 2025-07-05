@@ -1,4 +1,6 @@
-package modle.product
+package modle.customer
+
+import modle.product.Product
 
 data class CartItem(
     val product: Product,
