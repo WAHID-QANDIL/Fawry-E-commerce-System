@@ -10,6 +10,12 @@ import java.time.LocalDate
  * @property expiredDate The date when the product expires.
  */
 
-abstract class ExpiredbleProduct(private val expiredDate: LocalDate) : Product(), CanExpired {
+abstract class ExpireProduct(private val expiredDate: LocalDate, id: Int, name: String, price: Double, quantity: Int) :
+    Product(
+        id,
+        name,
+        price,
+        quantity
+    ), CanExpired {
     override fun isExpired(): Boolean = LocalDate.now().isAfter(expiredDate)
 }
