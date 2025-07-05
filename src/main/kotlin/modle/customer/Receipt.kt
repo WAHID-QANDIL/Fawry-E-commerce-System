@@ -1,10 +1,11 @@
 package modle.customer
 
-import modle.product.CartItem
+import java.awt.ItemSelectable
 
 data class Receipt(
     val products: List<CartItem>,
+    val shippableItemSelectable: List<CartItem>,
     val totalAmount: Double,
-    val shipping: Double,
+    val shippingCost: Double,
     val subTotal: Double,
 )
