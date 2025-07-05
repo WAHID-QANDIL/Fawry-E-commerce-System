@@ -8,7 +8,8 @@ class Customer {
         if (cart.isEmpty()) {
             throw IllegalStateException("Cart is empty")
         }
-        synchronized(this) {
+        // In this project I don't use multi-threading, but in real scenarios it assumes to lock other threads to
+        synchronized(lock = this) {
             val totalAmount = cart.sumOf { it.totalPrice }
             if (totalAmount > balance) {
                 throw IllegalStateException("Insufficient balance")

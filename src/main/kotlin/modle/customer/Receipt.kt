@@ -2,7 +2,7 @@ package modle.customer
 
 import modle.product.CartItem
 
-data class Reciept(
+data class Receipt(
     val products: List<CartItem>,
     val totalAmount: Double,
     val shipping: Double,

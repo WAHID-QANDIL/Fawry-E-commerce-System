@@ -9,7 +9,6 @@ class Cart {
         require(quantity > 0) { "Quantity must be greater than zero" }
         require(product.quantity >= quantity) { "Not enough quantity available for ${product.name}" }
 
-
         val existingItem = cart[product.id]
         if (existingItem != null){
             cart[existingItem.product.id] = existingItem.copy(
