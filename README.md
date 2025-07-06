@@ -28,6 +28,17 @@ This project is a simple shopping cart system implemented in Kotlin and Java. It
 3. Build the project using Gradle.
 4. Run the `Main.kt` file to execute the application.
 
-## Example Usage
+## Examples Usage
 ![img.png](img.png)
+![img_1.png](img_1.png)
+
+
+## Code Snapshots
+![img_2.png](img_2.png)
+![img_3.png](img_3.png)
+![img_4.png](img_4.png)
+
+
+
+
 ----------------------
