@@ -12,7 +12,7 @@ fun main() {
         addDummyDataShippable()
 
         val customer = Customer()
-        customer.setBalance(1000.0) // Set initial balance for the customer
+        customer.setBalance(100_000.0) // Set initial balance for the customer
 
         customer.addToCart(
             products.values.first(),
@@ -21,6 +21,10 @@ fun main() {
         //add shippable product
         customer.addToCart(
             products.values.first { it.canBeShipped != null },
+            quantity = 6
+        )
+        customer.addToCart(
+            products.values.last { it.canBeShipped != null },
             quantity = 6
         )
         val checkoutService = CheckoutService()
