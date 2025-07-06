@@ -10,10 +10,10 @@ class ShippingService() {
                 item?.let {
                     println(
                         """
-                    Product Name:
-                     ${getName(item)},
-                    Product Weight:
-                     ${getWeight(item)}
+                    Product that can be shipped:
+                    Product ID: ${it.product.id},
+                    Product Name: ${getName(item)},
+                    Product Weight: ${getWeight(item)}
                 """.trimIndent()
                     )
                 }
