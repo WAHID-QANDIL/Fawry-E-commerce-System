@@ -1,5 +1,6 @@
 package service.checkout
 
+import data.remove
 import modle.customer.CartItem
 import modle.customer.Customer
 import modle.customer.Receipt
@@ -57,6 +58,10 @@ class CheckoutService {
             subTotal = subTotal,
             totalAmount = totalAmount,
             shippableItemSelectable = customerShippableItems
-        )
+        ).also { receipt->
+            receipt.products.forEach {cartItem->
+                remove(cartItem.product, cartItem.quantity)
+            }
+        }
     }
 }

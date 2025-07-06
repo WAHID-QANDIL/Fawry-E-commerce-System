@@ -19,6 +19,21 @@ fun add(product: Product, quantity: Int = 1) {
     }
 
 }
+fun remove(product: Product, quantity: Int = 1) {
+    require(quantity > 0) { "Quantity must be greater than zero" }
+    val existingItem = dummyData[product.id]
+    if (existingItem != null) {
+        if (existingItem.quantity < quantity) {
+            throw IllegalStateException("Not enough quantity available for ${product.name}")
+        }
+        existingItem.quantity -= quantity
+        if (existingItem.quantity <= 0) {
+            dummyData.remove(existingItem.id)
+        }
+    } else {
+        throw IllegalStateException("Product with id ${product.id} does not exist")
+    }
+}
 
 fun addDummyData() {
     // Insert products into the data store
