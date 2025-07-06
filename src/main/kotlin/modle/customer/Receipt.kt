@@ -1,6 +1,5 @@
 package modle.customer
 
-import java.awt.ItemSelectable
 
 data class Receipt(
     val products: List<CartItem>,

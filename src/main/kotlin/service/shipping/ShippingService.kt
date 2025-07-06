@@ -1,7 +1,6 @@
 package service.shipping
 
 import modle.customer.CartItem
-import modle.product.Shippable
 
 class ShippingService() {
     companion object {
