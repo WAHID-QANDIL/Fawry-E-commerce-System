@@ -1,7 +1,6 @@
 import data.addDummyData
 import data.addDummyDataShippable
 import data.dummyData
-import modle.customer.CartItem
 import modle.customer.Customer
 import modle.product.Shippable
 import service.checkout.CheckoutService
@@ -17,12 +16,12 @@ fun main() {
 
     customer.addToCart(
         products.values.first(),
-        quantity = 2
+        quantity = 6
     )
     //add shippable product
     customer.addToCart(
         products.values.first { it.canBeShipped != null },
-        quantity = 1
+        quantity = 6
     )
     val checkoutService = CheckoutService()
     val receipt = checkoutService.createCustomerReceipt(customer)
@@ -30,13 +29,13 @@ fun main() {
     receipt.products.forEach {
         val product = it.product
         if (product.canBeShipped is Shippable) {
-            println("${it.quantity}x ${product.name} ${product.canBeShipped?.weight?.toInt()}g")
+            println("${it.quantity}x ${product.name} ${product.canBeShipped.weight.toInt()}Kg")
         }
     }
     if (receipt.shippableItemSelectable.isEmpty()) {
         println("No products to ship.")
     } else {
-        println("Total package weight ${receipt.shippableItemSelectable.sumOf { (it.quantity * (it.product.canBeShipped as? Shippable)?.weight!!) ?: 0.0 }}kg")
+        println("Total package weight ${receipt.shippableItemSelectable.sumOf { (it.quantity * it.product.canBeShipped?.weight!!) }}kg")
     }
 
     println("\n** Checkout receipt **")
